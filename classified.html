@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dossier Classé</title>
+  <link rel="icon" href="favicon.png" type="image/png">
   <style>
     body {
       background-color: #0a0a0a;
@@ -15,6 +16,7 @@
       align-items: center;
       text-align: center;
       min-height: 100vh;
+      position: relative;
     }
 
     .countdown {
@@ -39,9 +41,25 @@
       color: #fff;
       cursor: pointer;
     }
+
+    .icon {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 40px;
+      opacity: 0.4;
+    }
+
+    .hint {
+      opacity: 0.08;
+      font-size: 12px;
+      margin-top: 15px;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Zone invisible piégée -->
   <div onclick="window.location.href='fall.html'" style="position:absolute; top:0; left:0; width:30px; height:30px;"></div>
 
   <h1>Dossier ∴ J. Goldberg</h1>
@@ -52,13 +70,14 @@
   <p><strong>Dernier signal :</strong> Discord – 15:24, message crypté détecté.</p>
   <p><em>Chaque clic est une confession.</em></p>
 
-  <p style="opacity:0.1;">Le chiffre est dans tout ce que je fais.</p>
-
-
   <div class="countdown">Temps restant : <span id="timer">03:00</span></div>
 
   <input type="text" id="secret" placeholder="Code d'accès" />
   <button class="button" onclick="checkSecret()">Valider</button>
+
+  <p class="hint">Le chiffre est dans tout ce que je fais.</p>
+
+  <img src="favicon.png" class="icon" alt="∴">
 
   <script>
     function checkSecret() {
@@ -70,7 +89,7 @@
       }
     }
 
-    let timeLeft = 100;
+    let timeLeft = 180;
     const timerEl = document.getElementById("timer");
 
     const countdown = setInterval(() => {
@@ -79,18 +98,14 @@
         window.location.href = "toolate.html";
         return;
       }
-
       const minutes = Math.floor(timeLeft / 60);
       const seconds = timeLeft % 60;
       timerEl.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
       timeLeft--;
     }, 1000);
   </script>
+
+  <!-- Il te reste 3 minutes. Peut-être moins. -->
+
 </body>
 </html>
-
-
-<!-- Il te reste 3 minutes. Peut-être moins. -->
-<!-- Les yeux ∴ ne dorment jamais. -->
-<!-- Ne cherche pas le code. Ressens-le. -->
-

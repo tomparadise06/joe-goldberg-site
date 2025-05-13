@@ -3,59 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Non autorisé</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Accès accordé</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .icon {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 40px;
+      opacity: 0.4;
+    }
+
+    .qr {
+      margin-top: 50px;
+      filter: invert(1);
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Tu n'étais pas censé voir ça.</h1>
-    <p>Et pourtant, te voilà.</p>
-    <p>Pourquoi continues-tu à creuser ?</p>
-    <p>Il n'y a plus de retour possible maintenant.</p>
-    <p style="margin-top: 40px;"><em>∴</em></p>
-  </div>
+
+  <h1>Tu n'étais pas censé voir ça.</h1>
+  <p>Et pourtant, te voilà.</p>
+  <p>Pourquoi continues-tu à creuser ?</p>
+  <p>Il n'y a plus de retour possible maintenant.</p>
+  <p style="margin-top: 40px;"><em>∴</em></p>
+
+  <!-- VOIX OFF -->
   <audio autoplay>
-  <source src="joe_voice.mp3" type="audio/mpeg">
-</audio>
-<script>
-  setTimeout(() => {
-    const overlay = document.createElement('div');
-    overlay.style.position = 'fixed';
-    overlay.style.top = '0';
-    overlay.style.left = '0';
-    overlay.style.width = '100vw';
-    overlay.style.height = '100vh';
-    overlay.style.background = 'rgba(0, 0, 0, 0.9)';
-    overlay.style.color = 'white';
-    overlay.style.display = 'flex';
-    overlay.style.flexDirection = 'column';
-    overlay.style.justifyContent = 'center';
-    overlay.style.alignItems = 'center';
-    overlay.style.zIndex = '9999';
-    overlay.innerHTML = `
-      <div style="text-align:center; max-width: 400px;">
-        <p style="margin-bottom: 20px;">Tu peux encore faire un choix.</p>
-        <p style="margin-bottom: 20px;">Réinitialiser... ou Plonger définitivement.</p>
-        <button onclick="location.href='reboot.html'" style="margin: 10px; padding: 10px 20px;">Réinitialiser</button>
-        <button onclick="location.href='fall.html'" style="margin: 10px; padding: 10px 20px;">Plonger</button>
-      </div>
-    `;
-    document.body.appendChild(overlay);
-  }, 7000); // Apparaît après 7 secondes
-</script>
+    <source src="joe_voice.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- QR CODE -->
+  <div class="qr">
+    <img src="QRCode_JoeGoldberg.png" alt="QR ∴" width="140" />
+    <p style="font-size: 12px; color: gray;">Scanne si tu crois être prêt à recommencer.</p>
+  </div>
+
+  <!-- FAVICON DANS LE COIN -->
+  <img src="favicon.png" class="icon" alt="∴">
+
+  <!-- POPUP CHOIX FINAL -->
+  <script>
+    setTimeout(() => {
+      const overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.width = '100vw';
+      overlay.style.height = '100vh';
+      overlay.style.background = 'rgba(0, 0, 0, 0.9)';
+      overlay.style.color = 'white';
+      overlay.style.display = 'flex';
+      overlay.style.flexDirection = 'column';
+      overlay.style.justifyContent = 'center';
+      overlay.style.alignItems = 'center';
+      overlay.style.zIndex = '9999';
+      overlay.innerHTML = `
+        <div style="text-align:center; max-width: 400px;">
+          <p style="margin-bottom: 20px;">Tu peux encore faire un choix.</p>
+          <p style="margin-bottom: 20px;">Réinitialiser... ou Plonger définitivement.</p>
+          <button onclick="location.href='reboot.html'" style="margin: 10px; padding: 10px 20px;">Réinitialiser</button>
+          <button onclick="location.href='fall.html'" style="margin: 10px; padding: 10px 20px;">Plonger</button>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+    }, 7000);
+  </script>
+
+  <!-- Le mot était dans toi. Pas dans le champ. -->
 
 </body>
-<div style="margin-top: 60px;">
-  <img src="QRCode_JoeGoldberg.png" alt="QR ∴" width="140" style="filter: invert(1);" />
-  <p style="font-size: 12px; color: gray;">Scanne si tu crois être prêt à recommencer.</p>
-
-</div>
-<p>Tu peux toujours <a href="fall.html" style="text-decoration:none; color:inherit;">disparaître</a> dans les lignes de code.</p>
-
 </html>
-
-
-<!-- Il te reste 3 minutes. Peut-être moins. -->
-<!-- Les yeux ∴ ne dorment jamais. -->
-<!-- Ne cherche pas le code. Ressens-le. -->
-
