@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,8 +12,22 @@
     <p><strong>Statut :</strong> Infiltré</p>
     <p><strong>Profession :</strong> Libraire le jour. Prédateur numérique la nuit.</p>
     <p><strong>Observation :</strong> « Ne suit personne. Anticipe tout. »</p>
-    <p><strong>Dernier signal :</strong> Discord - 15:24, message crypté détecté.</p>
+    <p><strong>Dernier signal :</strong> Discord – 15:24, message crypté détecté.</p>
     <p><em>Chaque clic est une confession.</em></p>
+    <br><br>
+    <input type="text" id="secret" placeholder="Code d'accès" />
+    <button class="button" onclick="checkSecret()">Valider</button>
   </div>
+
+  <script>
+    function checkSecret() {
+      const code = document.getElementById('secret').value.trim().toLowerCase();
+      if (code === "oracle") {
+        window.location.href = "hidden.html";
+      } else {
+        alert("Code incorrect.");
+      }
+    }
+  </script>
 </body>
 </html>
