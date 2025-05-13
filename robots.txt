@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /fall.html
-Disallow: /oracle
-
-# Le chiffre est en toi.

@@ -3,28 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dossier Classé</title>
-  <link rel="icon" href="favicon.png" type="image/png">
+  <title>Accès restreint ∴</title>
+  <link rel="icon" href="../assets/img/favicon.png" type="image/png">
   <style>
     body {
       background-color: #0a0a0a;
       color: #eee;
-      font-family: 'Courier New', Courier, monospace;
+      font-family: 'Courier New', monospace;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       min-height: 100vh;
-      position: relative;
     }
-
     .countdown {
       font-size: 20px;
       margin-top: 20px;
       color: #ff5555;
     }
-
     input {
       margin-top: 20px;
       padding: 10px;
@@ -32,7 +29,6 @@
       color: #fff;
       border: 1px solid #444;
     }
-
     .button {
       margin-top: 20px;
       padding: 10px 20px;
@@ -41,43 +37,18 @@
       color: #fff;
       cursor: pointer;
     }
-
-    .icon {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      width: 40px;
-      opacity: 0.4;
-    }
-
-    .hint {
-      opacity: 0.08;
-      font-size: 12px;
-      margin-top: 15px;
-    }
   </style>
 </head>
 <body>
-
-  <!-- Zone invisible piégée -->
-  <div onclick="window.location.href='fall.html'" style="position:absolute; top:0; left:0; width:30px; height:30px;"></div>
-
-  <h1>Dossier ∴ J. Goldberg</h1>
-
-  <p><strong>Statut :</strong> Infiltré</p>
-  <p><strong>Profession :</strong> Libraire le jour. Prédateur numérique la nuit.</p>
-  <p><strong>Observation :</strong> « Ne suit personne. Anticipe tout. »</p>
-  <p><strong>Dernier signal :</strong> Discord – 15:24, message crypté détecté.</p>
-  <p><em>Chaque clic est une confession.</em></p>
+  <h1>Dossier classé ∴</h1>
+  <p><strong>Statut :</strong> Ciblé</p>
+  <p><strong>Dernier accès :</strong> Inconnu</p>
+  <p><em>Tu crois chercher ? Joe t’a déjà trouvé.</em></p>
 
   <div class="countdown">Temps restant : <span id="timer">03:00</span></div>
 
-  <input type="text" id="secret" placeholder="Code d'accès" />
+  <input type="text" id="secret" placeholder="Mot de passe" />
   <button class="button" onclick="checkSecret()">Valider</button>
-
-  <p class="hint">Le chiffre est dans tout ce que je fais.</p>
-
-  <img src="favicon.png" class="icon" alt="∴">
 
   <script>
     function checkSecret() {
@@ -105,7 +76,9 @@
     }, 1000);
   </script>
 
-  <!-- Il te reste 3 minutes. Peut-être moins. -->
+  <!-- Joe attend. Tu es en retard. -->
+<!-- Joe sait ce que tu veux avant même que tu tapes. -->
+<!-- “Je ne te stalke pas. Je m’intéresse à toi.” – J.G. -->
 
 </body>
 </html>

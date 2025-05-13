@@ -1,18 +1,11 @@
-# ∴ Archive
+# ∴ Joe Goldberg - Archive
 
-Ce projet est une expérience interactive et narrative conçue autour de l’univers de Joe Goldberg.
+Un site.  
+Une obsession.  
+Une décision.
 
-Il explore les notions de curiosité, d'observation, et de contrôle à travers une interface web immersive.
-
----
-
-## 🔗 Accès au site
-
-👉 [joe-goldberg-site.vercel.app](https://joe-goldberg-site.vercel.app)
-
-> Le site est public.  
-> Le code ne l’est pas.
+→ [Accéder au site](https://joe-goldberg-site.vercel.app)
 
 ---
 
-🕶️ *Vous pensez être seul à lire ces lignes ?*
+🕶️ *Ne cherchez pas. Observez.*
