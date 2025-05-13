@@ -16,40 +16,12 @@
       align-items: center;
       text-align: center;
       min-height: 100vh;
-      overflow-x: hidden;
     }
 
-    .typewriter {
-      overflow: hidden;
-      border-right: .15em solid #fff;
-      white-space: nowrap;
-      margin: 0 auto;
-      animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #fff; }
-    }
-
-    svg {
-      width: 100px;
-      margin: 40px 0;
-      animation: eyeMotion 4s infinite alternate ease-in-out;
-    }
-
-    @keyframes eyeMotion {
-      0% { transform: translateX(-10px); }
-      100% { transform: translateX(10px); }
-    }
-
-    audio {
-      display: none;
+    .countdown {
+      font-size: 20px;
+      margin-top: 20px;
+      color: #ff5555;
     }
 
     .button {
@@ -71,23 +43,15 @@
   </style>
 </head>
 <body>
-  <audio autoplay loop>
-    <source src="ambiance.mp3" type="audio/mpeg">
-  </audio>
-
-  <h1 class="typewriter">Dossier ∴ J. Goldberg</h1>
-
-  <svg viewBox="0 0 100 100">
-    <circle cx="50" cy="50" r="45" stroke="#fff" stroke-width="2" fill="none"/>
-    <circle cx="50" cy="50" r="15" fill="#fff"/>
-    <circle cx="50" cy="50" r="5" fill="#000"/>
-  </svg>
+  <h1>Dossier ∴ J. Goldberg</h1>
 
   <p><strong>Statut :</strong> Infiltré</p>
   <p><strong>Profession :</strong> Libraire le jour. Prédateur numérique la nuit.</p>
   <p><strong>Observation :</strong> « Ne suit personne. Anticipe tout. »</p>
   <p><strong>Dernier signal :</strong> Discord – 15:24, message crypté détecté.</p>
   <p><em>Chaque clic est une confession.</em></p>
+
+  <div class="countdown">Temps restant : <span id="timer">03:00</span></div>
 
   <input type="text" id="secret" placeholder="Code d'accès" />
   <button class="button" onclick="checkSecret()">Valider</button>
@@ -101,6 +65,21 @@
         alert("Code incorrect.");
       }
     }
+
+    let timeLeft = 180;
+    const timerEl = document.getElementById("timer");
+
+    const countdown = setInterval(() => {
+      let minutes = Math.floor(timeLeft / 60);
+      let seconds = timeLeft % 60;
+      timerEl.textContent = \`\${minutes.toString().padStart(2, '0')}:\${seconds.toString().padStart(2, '0')}\`;
+      timeLeft--;
+
+      if (timeLeft < 0) {
+        clearInterval(countdown);
+        window.location.href = "toolate.html";
+      }
+    }, 1000);
   </script>
 </body>
 </html>
